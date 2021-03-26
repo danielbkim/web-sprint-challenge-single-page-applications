@@ -54,8 +54,23 @@ const App = () => {
     axios
       .post('https://reqres.in/', newOrder)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        // CALL SETORDERS to SET THE STATE after YOU'VE SUBMITTED
+        setOrders([response.data, ...orders]);
+        // RESET THE FORM VALUES UPON SUBMIT
+        setFormValues(initialFormValues);
       })
+  };
+
+  // SUBMITTING FORM LOGIC
+  const formSubmit = () => {
+    const newOrder = {
+      name: formValues.name.trim(),
+      size: formValues.size,
+      toppings: ["Extra Cheese", "Pepperoni", "Sausage", "Meatball"].filter(
+        (topping) => formValues[topping]
+      )
+    }
   };
 
   return (
@@ -71,7 +86,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route path='/pizza'>
-            <Form orders={ orders } />
+            <Form orders={ orders } submit={ formSubmit } values={ formValues } />
         </Route>
         <Route path='/'>
             <Home />
