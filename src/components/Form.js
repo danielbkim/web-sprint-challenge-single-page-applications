@@ -45,6 +45,7 @@ export default function Form(props) {
                         type="checkbox"
                         name="extraCheese"
                         value="Extra Cheese"
+                        checked={values.extraCheese}
                         onChange={onChange}
                     />
                     <label htmlFor="extraCheese">Extra Cheese</label>
@@ -52,6 +53,7 @@ export default function Form(props) {
                         type="checkbox"
                         name="pepperoni"
                         value="Pepperoni"
+                        checked={values.pepperoni}
                         onChange={onChange}
                     />
                     <label htmlFor="pepperoni">Pepperoni</label>
@@ -59,6 +61,7 @@ export default function Form(props) {
                         type="checkbox"
                         name="sausage"
                         value="Sausage"
+                        checked={values.sausage}
                         onChange={onChange}
                     />
                     <label htmlFor="sausage">Sausage</label>
@@ -66,6 +69,7 @@ export default function Form(props) {
                         type="checkbox"
                         name="meatball"
                         value="Meatball"
+                        // checked={values.meatball}
                         onChange={onChange}
                     />
                     <label htmlFor="meatball">Meatball</label>
