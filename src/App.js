@@ -44,13 +44,13 @@ const App = () => {
         <div className='nav-links'>
             <Link to='/'>Home</Link>
             <br></br>
-            <Link to='/order'>Place an Order</Link>
+            <Link to='/order'>Order</Link>
             <p>Your favorite food delivered while coding</p>
         </div>
       </nav>
       <Switch>
         <Route path='/order'>
-            <Form />
+            <Form orders={ initialOrders } />
         </Route>
         <Route path='/'>
             <Home />
