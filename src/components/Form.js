@@ -69,7 +69,7 @@ export default function Form(props) {
                         type="checkbox"
                         name="meatball"
                         value="Meatball"
-                        // checked={values.meatball}
+                        checked={values.meatball}
                         onChange={onChange}
                     />
                     <label htmlFor="meatball">Meatball</label>

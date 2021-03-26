@@ -4,7 +4,7 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Form from './components/Form';
 
-import schema from '../validation/formSchema';
+import schema from './validation/formSchema';
 import * as yup from 'yup';
 
 
@@ -73,7 +73,7 @@ const App = () => {
   const inputChange = (property, value) => {
     // validate the value of the property given
     yup
-      .reach(schema, item)
+      .reach(schema, property)
       .validate(value)
       .then(() => {
         setFormErrors({ ...formErrors, [property]: ""})
