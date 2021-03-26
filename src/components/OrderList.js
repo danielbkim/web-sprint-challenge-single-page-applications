@@ -11,14 +11,15 @@ export default function OrderList(props) {
                         <div key={ index }>
                             <h3>{ order.name }</h3>
                             <p>{ order.pizzaSize + '" pie'}</p>
-                            <p>Toppings: { order.toppings.map(
+                            <h3>Toppings:</h3>
+                            { order.toppings.map(
                                 (topping, index) => {
                                     return (<ul key={ index }>
                                         <li>{ topping }</li>
                                     </ul>
                                     )
                                 }
-                            ) }</p>
+                            ) }
                             <p>{ order.specialInstructions }</p>
                         </div>
                     )

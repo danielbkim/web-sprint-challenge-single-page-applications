@@ -9,19 +9,19 @@ const initialOrders = [
   {
     name: 'Daniel',
     pizzaSize: 10,
-    toppings: ['extra cheese', 'meatball'],
+    toppings: ['Extra cheese', 'Meatball'],
     specialInstructions: 'leave pizza at the door'
   },
   {
     name: 'Charles',
     pizzaSize: 12,
-    toppings: ['pepperoni'],
+    toppings: ['Pepperoni'],
     specialInstructions: 'tip is in the mailbox'
   },
   {
     name: 'George',
     pizzaSize: 10,
-    toppings: ['sausage'],
+    toppings: ['Sausage'],
     specialInstructions: 'drive safely'
   },
   {
