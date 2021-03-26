@@ -3,19 +3,34 @@ import OrderList from './OrderList';
 
 
 export default function Form(props) {
-    const { orders } = props
+    const { orders, values, submit } = props
+
+    const onSubmit = (e) => {
+        e.preventDefaults();
+        console.log('onSubmit: ', e.target);
+        // submit()
+    };
+
+    const onChange = (e) => {
+        console.log('onChange: ', e.target);
+    };
+
     return(
         <div>
-            <form>
+            <form onSubmit={ onSubmit }>
                 <label>
                     Name:
-                    <input name='name' type='text'></input>
+                    <input
+                        name='name'
+                        type='text'
+                        onChange={onChange}
+                    />
                 </label>
                 <br/>
                 <br/>
                 <label>
                     Size:
-                    <select name='size'>
+                    <select name='size' onChange={onChange}>
                         <option>--</option>
                         <option value='8'>8</option>
                         <option value='10'>10</option>
@@ -26,19 +41,43 @@ export default function Form(props) {
                 <br/>
                 <br/>
                     Toppings:
-                    <input type="checkbox" name="extraCheese" value="Extra Cheese"/>
+                    <input
+                        type="checkbox"
+                        name="extraCheese"
+                        value="Extra Cheese"
+                        onChange={onChange}
+                    />
                     <label htmlFor="extraCheese">Extra Cheese</label>
-                    <input type="checkbox" name="pepperoni" value="Pepperoni"/>
+                    <input
+                        type="checkbox"
+                        name="pepperoni"
+                        value="Pepperoni"
+                        onChange={onChange}
+                    />
                     <label htmlFor="pepperoni">Pepperoni</label>
-                    <input type="checkbox" name="sausage" value="Sausage"/>
+                    <input
+                        type="checkbox"
+                        name="sausage"
+                        value="Sausage"
+                        onChange={onChange}
+                    />
                     <label htmlFor="sausage">Sausage</label>
-                    <input type="checkbox" name="meatball" value="Meatball"/>
+                    <input
+                        type="checkbox"
+                        name="meatball"
+                        value="Meatball"
+                        onChange={onChange}
+                    />
                     <label htmlFor="meatball">Meatball</label>
                 <br/>
                 <br/>
                 <label>
                     Special Instructions:
-                    <input name='name' type='textarea'></input>
+                    <input
+                        name='name'
+                        type='textarea'
+                        onChange={onChange}
+                    />
                 </label>
                 <br/>
                 <br/>
