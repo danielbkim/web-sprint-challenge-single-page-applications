@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import axios from 'axios';
+import { Route, Link, Switch } from 'react-router-dom';
 
-const orders = [
+const initialOrders = [
   {
     name: 'Daniel',
     pizzaSize: 10,
@@ -28,11 +30,16 @@ const orders = [
 ];
 
 const App = () => {
-
+  // create your slices of state
+  const [orders, setOrders] = useState(initialOrders);
+  // set up state of validations later
 
   return (
     <>
       <h1>Lambda Eats</h1>
+      <Link to='/'>Home</Link>
+      <br></br>
+      <Link to='/order'>Place an Order</Link>
       <p>Your favorite food delivered while coding</p>
 
     </>
