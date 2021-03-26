@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { Route, Link, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import Form from './components/Form';
+
 
 const initialOrders = [
   {
@@ -25,7 +28,7 @@ const initialOrders = [
     name: 'Sarah',
     pizzaSize: 10,
     toppings: [],
-    specialInstructions: 'it\'s free if it takes longer than 30 minutes right?'
+    specialInstructions: 'it\'s free if it takes longer than 30 minutes right'
   }
 ];
 
@@ -39,19 +42,18 @@ const App = () => {
       <nav>
         <h1 className='home-header'>Lambda Eats</h1>
         <div className='nav-links'>
-          <Link to='/'>Home</Link>
-          <br></br>
-          <Link to='/order'>Place an Order</Link>
-          <p>Your favorite food delivered while coding</p>
+            <Link to='/'>Home</Link>
+            <br></br>
+            <Link to='/order'>Place an Order</Link>
+            <p>Your favorite food delivered while coding</p>
         </div>
       </nav>
       <Switch>
         <Route path='/order'>
-          {/* Form Component Here */}
+            <Form />
         </Route>
         <Route path='/'>
-          {/* App homepage Component Here */}
-          <App />
+            <Home />
         </Route>
       </Switch>
     </>
