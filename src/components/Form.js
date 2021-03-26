@@ -3,7 +3,7 @@ import OrderList from './OrderList';
 
 
 export default function Form(props) {
-    const { orders, values, submit, change } = props
+    const { orders, values, submit, change, errors } = props
 
     const onSubmit = (e) => {
         e.preventDefaults();
@@ -23,6 +23,10 @@ export default function Form(props) {
 
     return(
         <div>
+            <div className="errors">
+                <div>{errors.username}</div>
+                <div>{errors.pizzaSize}</div>
+            </div>
             <form onSubmit={ onSubmit }>
                 <label>
                     Name:
@@ -91,7 +95,7 @@ export default function Form(props) {
                 </label>
                 <br/>
                 <br/>
-                <button>Add to Order</button>
+                <button id='submitBtn'>Add to Order</button>
             </form>
             <br/>
             <br/>
