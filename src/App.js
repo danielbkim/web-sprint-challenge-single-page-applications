@@ -63,9 +63,9 @@ const App = () => {
       // erroring out on POST route - new object is working though on submit
       .post('https://reqres.in/', newOrder)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
         // CALL SETORDERS to SET THE STATE after YOU'VE SUBMITTED
-        setOrders([response.data, ...orders]);
+        setOrders([...orders, response.data]);
         // RESET THE FORM VALUES UPON SUBMIT
         setFormValues(initialFormValues);
       })
