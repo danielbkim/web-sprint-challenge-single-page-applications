@@ -9,7 +9,7 @@ export default function OrderList(props) {
                 orders.map((order, index) => {
                     return (
                         <div key={ index }>
-                            <h3>{ order.name }</h3>
+                            <h3>{ order.username }</h3>
                             <p>{ order.pizzaSize + '" pie'}</p>
                             <h3>Toppings:</h3>
                             { order.toppings.map(

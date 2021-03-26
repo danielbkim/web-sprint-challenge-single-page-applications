@@ -15,8 +15,9 @@ export default function Form(props) {
         console.log('onChange: ', e.target);
         // check if the value is 'checkbox' if it is pull provide the value of checked to the change() function in props, otherwise, pass in the actual value
         const { name, value, type, checked } = e.target
+        // const { name, value } = e.target;
         const valueToUse = type === 'checkbox' ? checked : value;
-        // console.log(name, value, type, checked)
+        console.log(name, value, type, checked)
         change(name, valueToUse);
     };
 
