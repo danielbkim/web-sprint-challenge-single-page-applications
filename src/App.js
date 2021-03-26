@@ -36,12 +36,24 @@ const App = () => {
 
   return (
     <>
-      <h1>Lambda Eats</h1>
-      <Link to='/'>Home</Link>
-      <br></br>
-      <Link to='/order'>Place an Order</Link>
-      <p>Your favorite food delivered while coding</p>
-
+      <nav>
+        <h1 className='home-header'>Lambda Eats</h1>
+        <div className='nav-links'>
+          <Link to='/'>Home</Link>
+          <br></br>
+          <Link to='/order'>Place an Order</Link>
+          <p>Your favorite food delivered while coding</p>
+        </div>
+      </nav>
+      <Switch>
+        <Route path='/order'>
+          {/* Form Component Here */}
+        </Route>
+        <Route path='/'>
+          {/* App homepage Component Here */}
+          <App />
+        </Route>
+      </Switch>
     </>
   );
 };
