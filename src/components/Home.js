@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import singleOrder from './singleOrder';
+// import OrderList from './OrderList';
 
 export default function Home(props) {
     return(

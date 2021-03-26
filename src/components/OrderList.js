@@ -6,15 +6,16 @@ export default function OrderList(props) {
         <div>
             {/* <h3>test</h3> */}
             {
-                orders.map((order) => {
+                orders.map((order, index) => {
                     return (
-                        <div>
+                        <div key={ index }>
                             <h3>{ order.name }</h3>
                             <p>{ order.pizzaSize + '" pie'}</p>
                             <p>Toppings: { order.toppings.map(
-                                (topping) => {
-                                    return (
-                                        <p>{ topping }</p>
+                                (topping, index) => {
+                                    return (<ul key={ index }>
+                                        <li>{ topping }</li>
+                                    </ul>
                                     )
                                 }
                             ) }</p>
