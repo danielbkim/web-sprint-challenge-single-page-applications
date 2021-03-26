@@ -21,7 +21,7 @@ export default function Form(props) {
                 <label>
                     Name:
                     <input
-                        name='name'
+                        name='username'
                         type='text'
                         onChange={onChange}
                     />
@@ -78,7 +78,7 @@ export default function Form(props) {
                 <label>
                     Special Instructions:
                     <input
-                        name='name'
+                        name='specialInstructions'
                         type='textarea'
                         onChange={onChange}
                     />

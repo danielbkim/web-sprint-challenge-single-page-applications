@@ -7,25 +7,25 @@ import Form from './components/Form';
 
 const initialOrders = [
   {
-    name: 'Daniel',
+    username: 'Daniel',
     pizzaSize: 10,
     toppings: ['Extra cheese', 'Meatball'],
     specialInstructions: 'leave pizza at the door'
   },
   {
-    name: 'Charles',
+    username: 'Charles',
     pizzaSize: 12,
     toppings: ['Pepperoni'],
     specialInstructions: 'tip is in the mailbox'
   },
   {
-    name: 'George',
+    username: 'George',
     pizzaSize: 10,
     toppings: ['Sausage'],
     specialInstructions: 'drive safely'
   },
   {
-    name: 'Sarah',
+    username: 'Sarah',
     pizzaSize: 10,
     toppings: [],
     specialInstructions: 'it\'s free if it takes longer than 30 minutes right'
@@ -33,7 +33,7 @@ const initialOrders = [
 ];
 
 const initialFormValues = {
-  name: "",
+  username: "",
   pizzaSize: "",
   extraCheese: false,
   pepperoni: false,
@@ -65,7 +65,7 @@ const App = () => {
   // SUBMITTING FORM LOGIC
   const formSubmit = () => {
     const newOrder = {
-      name: formValues.name.trim(),
+      name: formValues.username.trim(),
       size: formValues.size,
       toppings: ["Extra Cheese", "Pepperoni", "Sausage", "Meatball"].filter(
         (topping) => formValues[topping]
