@@ -58,6 +58,7 @@ const App = () => {
 
   // POSTING A NEW ORDER LOGIC HERE
   const postNewOrder = (newOrder) => {
+    console.log(newOrder);
     axios
       .post('https://reqres.in/', newOrder)
       .then((response) => {
