@@ -6,8 +6,8 @@ export default function Form(props) {
     const { orders, values, submit, change, errors } = props
 
     const onSubmit = (e) => {
-        e.preventDefaults();
-        console.log('onSubmit: ', e.target);
+        e.preventDefault();
+        // console.log('onSubmit: ', e.target);
         submit()
     };
 
@@ -25,7 +25,7 @@ export default function Form(props) {
         <div>
             <div className="errors">
                 <div>{errors.username}</div>
-                <div>{errors.pizzaSize}</div>
+                <div>{errors.size}</div>
             </div>
             <form onSubmit={ onSubmit }>
                 <label>

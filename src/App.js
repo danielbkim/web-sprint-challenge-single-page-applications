@@ -60,9 +60,10 @@ const App = () => {
   const postNewOrder = (newOrder) => {
     console.log(newOrder);
     axios
+      // erroring out on POST route - new object is working though on submit
       .post('https://reqres.in/', newOrder)
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         // CALL SETORDERS to SET THE STATE after YOU'VE SUBMITTED
         setOrders([response.data, ...orders]);
         // RESET THE FORM VALUES UPON SUBMIT
@@ -94,11 +95,15 @@ const App = () => {
   const formSubmit = () => {
     const newOrder = {
       name: formValues.username.trim(),
-      size: formValues.size,
+      pizzaSize: formValues.size,
       toppings: ["Extra Cheese", "Pepperoni", "Sausage", "Meatball"].filter(
         (topping) => formValues[topping]
-      )
+      ),
+      specialInstructions: formValues.specialInstructions.trim()
     }
+    // debugger
+    postNewOrder(newOrder);
+    
   };
 
   return (

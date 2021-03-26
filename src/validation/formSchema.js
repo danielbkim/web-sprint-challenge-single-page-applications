@@ -5,7 +5,7 @@ export default yup.object().shape({
     .string()
     .required('username is required')
     .min(2, 'username must be longer than two characters'),
-    pizzaSize: yup
+    size: yup
     .number()
     .required('pizza size is required'),
     extraCheese: yup.boolean(),
