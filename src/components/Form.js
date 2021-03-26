@@ -25,21 +25,20 @@ export default function Form(props) {
                 </label>
                 <br/>
                 <br/>
-                <label>
                     Toppings:
-                    <select name='toppings'>
-                        <option>--</option>
-                        <option value='Extra Cheese'>Extra Cheese</option>
-                        <option value='Pepperoni'>Pepperoni</option>
-                        <option value='Sausage'>Sausage</option>
-                        <option value='Meatball'>Meatball</option>
-                    </select>
-                </label>
+                    <input type="checkbox" name="extraCheese" value="Extra Cheese"/>
+                    <label htmlFor="extraCheese">Extra Cheese</label>
+                    <input type="checkbox" name="pepperoni" value="Pepperoni"/>
+                    <label htmlFor="pepperoni">Pepperoni</label>
+                    <input type="checkbox" name="sausage" value="Sausage"/>
+                    <label htmlFor="sausage">Sausage</label>
+                    <input type="checkbox" name="meatball" value="Meatball"/>
+                    <label htmlFor="meatball">Meatball</label>
                 <br/>
                 <br/>
                 <label>
                     Special Instructions:
-                    <input name='name' type='dropdown'></input>
+                    <input name='name' type='textarea'></input>
                 </label>
                 <br/>
                 <br/>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Form from './components/Form';
 
@@ -32,19 +32,40 @@ const initialOrders = [
   }
 ];
 
+const initialFormValues = {
+  name: "",
+  pizzaSize: "",
+  extraCheese: false,
+  pepperoni: false,
+  meatball: false,
+  sausage: false
+};
+
 const App = () => {
   // create your slices of state
   const [orders, setOrders] = useState(initialOrders);
+  const [formValues, setFormValues] = useState(initialFormValues);
   // set up state of validations later
+
+
+
+  // POSTING A NEW ORDER LOGIC HERE
+  const postNewOrder = (newOrder) => {
+    axios
+      .post('https://reqres.in/', newOrder)
+      .then((response) => {
+        console.log(response);
+      })
+  };
 
   return (
     <>
       <nav>
         <h1 className='home-header'>Lambda Eats</h1>
         <div className='nav-links'>
-            <Link to='/'>Home</Link>
+            <NavLink to='/'>Home</NavLink>
             <br></br>
-            <Link to='/pizza'>Order</Link>
+            <NavLink to='/pizza'>Order</NavLink>
             <p>Your favorite food delivered while coding</p>
         </div>
       </nav>
