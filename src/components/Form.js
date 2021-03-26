@@ -1,5 +1,5 @@
 import React from 'react';
-import SingleOrder from './singleOrder';
+import OrderList from './OrderList';
 
 
 export default function Form(props) {
@@ -12,7 +12,7 @@ export default function Form(props) {
                     <input type='text'></input>
                 </label>
             </form>
-            <SingleOrder orders={ orders }/>
+            <OrderList orders={ orders }/>
         </div>
     )
 }

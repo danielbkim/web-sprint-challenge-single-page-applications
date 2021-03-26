@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SingleOrder(props) {
+export default function OrderList(props) {
     const { orders } = props;
     return(
         <div>
