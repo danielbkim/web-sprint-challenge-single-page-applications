@@ -85,7 +85,7 @@ export default function Form(props) {
                 </label>
                 <br/>
                 <br/>
-                <button>place order</button>
+                <button>Add to Order</button>
             </form>
             <br/>
             <br/>

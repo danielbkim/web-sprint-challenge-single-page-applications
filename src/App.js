@@ -4,6 +4,9 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Form from './components/Form';
 
+import schema from '../validation/formSchema';
+import * as yup from 'yup';
+
 
 const initialOrders = [
   {
@@ -41,12 +44,16 @@ const initialFormValues = {
   sausage: false
 };
 
+const initialFormErrors = {
+  username: ""
+}
+
 const App = () => {
   // create your slices of state
   const [orders, setOrders] = useState(initialOrders);
   const [formValues, setFormValues] = useState(initialFormValues);
   // set up state of validations later
-
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
 
 
   // POSTING A NEW ORDER LOGIC HERE
@@ -59,6 +66,26 @@ const App = () => {
         setOrders([response.data, ...orders]);
         // RESET THE FORM VALUES UPON SUBMIT
         setFormValues(initialFormValues);
+      })
+  };
+
+  // LOGIC FOR LETTING A CHANGE HAPPEN BASED ON VALIDATION AND REQUIREMENTS
+  const inputChange = (property, value) => {
+    // validate the value of the property given
+    yup
+      .reach(schema, item)
+      .validate(value)
+      .then(() => {
+        setFormErrors({ ...formErrors, [property]: ""})
+      })
+      .catch((err) => {
+        // use the setFormErrors you built to set state to add the error into the list of errors, if something goes wrong
+        setFormErrors({ ...formErrors, [property]: err.errors[0] });
+      });
+      // if everything goes right, add the value into form values
+      setFormValues({
+        ...formValues,
+        [property]: value
       })
   };
 
@@ -86,7 +113,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route path='/pizza'>
-            <Form orders={ orders } submit={ formSubmit } values={ formValues } />
+            <Form orders={ orders } change={ inputChange } submit={ formSubmit } values={ formValues } errors={  formErrors } />
         </Route>
         <Route path='/'>
             <Home />
